@@ -2,8 +2,8 @@
 
 one:
   title: MyString
-  truncated_preview: MyString
+  body: MyString
 
 two:
   title: MyString
-  truncated_preview: MyString
+  body: MyString
