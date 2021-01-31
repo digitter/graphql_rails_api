@@ -10,3 +10,4 @@
   post = Post.create!(title: Faker::Lorem.characters(number: 5), body: Faker::Lorem.characters(number: 10))
   10.times { post.comments.create!(content: Faker::Lorem.characters(number: 5)) }
 end
+
