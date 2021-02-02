@@ -8,7 +8,6 @@ module Mutations
     type Types::UserType
 
     def resolve(name:, email:, password:, password_digest:)
-      byebug
       User.create!(
         name: name,
         email: email,
