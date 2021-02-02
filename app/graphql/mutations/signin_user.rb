@@ -1,7 +1,6 @@
 module Mutations
   class SigninUser < BaseMutation
-    # field :user, Types::UserType, null: true
-    field :name, String, null: true
+    field :user, Types::UserType, null: true
     # type Types::UserType
 
     argument :email, String, required: true
@@ -15,7 +14,6 @@ module Mutations
       context[:session][:user_id] = user.id
 
       { user: user }
-      # { name: user.name }
    end
   end
 end
