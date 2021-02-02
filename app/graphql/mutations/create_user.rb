@@ -1,11 +1,13 @@
 module Mutations
   class CreateUser < BaseMutation
+    field :user, Types::UserType, null: true
+    # type Types::UserType
+
     argument :name, String, required: true
     argument :email, String, required: true
     argument :password, String, required: true
     argument :password_confirmation, String, required: true
 
-    type Types::UserType
 
     def resolve(name:, email:, password:, password_confirmation:)
       user = User.create!(
@@ -15,11 +17,7 @@ module Mutations
         password_confirmation: password_confirmation
       )
 
-      {
-        id: user.id,
-        name: user.name,
-        email: user.email
-      }
+      { user: user }
     end
   end
 end
