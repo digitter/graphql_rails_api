@@ -6,8 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-10.times do
-  post = Post.create!(title: Faker::Lorem.characters(number: 5), body: Faker::Lorem.characters(number: 10))
-  10.times { post.comments.create!(content: Faker::Lorem.characters(number: 5)) }
+user = User.create!(name: "aaa", email: "a@a.a", password: "aaaaaa", password_digest: "aaaaaa")
+
+5.times do
+  post = Post.create!(title: Faker::Lorem.characters(number: 5), body: Faker::Lorem.characters(number: 10), user_id: 1)
+  5.times { post.comments.create!(content: Faker::Lorem.characters(number: 5), user_id: 1) }
 end
 
