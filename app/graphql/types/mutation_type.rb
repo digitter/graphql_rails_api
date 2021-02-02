@@ -1,5 +1,6 @@
 module Types
   class MutationType < BaseObject
+    field :signin_user, mutation: Mutations::SigninUser
     field :create_user, mutation: Mutations::CreateUser
     field :create_post, mutation: Mutations::CreatePost
     field :update_post, mutation: Mutations::UpdatePost
